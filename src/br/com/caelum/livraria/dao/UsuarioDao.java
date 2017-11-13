@@ -13,6 +13,7 @@ public class UsuarioDao {
 	private EntityManager manager;
 
 	public Usuario buscaPeloLogin(String login) {
+		
 		Usuario usuario = (Usuario) this.manager
                 .createQuery("select u from Usuario u where u.login=:pLogin")
                 .setParameter("pLogin", login).getSingleResult();

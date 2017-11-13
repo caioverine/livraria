@@ -25,6 +25,7 @@ public class LoginBean {
 	MenuBean menu;
 
 	public Usuario getUsuario() {
+		
 		return usuario;
 	}
 	
@@ -33,6 +34,7 @@ public class LoginBean {
 		Usuario usuarioEncontrado = this.dao.buscaPeloLogin(usuario.getLogin());
 		
 		if(usuarioEncontrado!= null && possuiMesmaSenha(usuarioEncontrado)) {
+			
 			usuarioLogado.logar(usuarioEncontrado);
 			return menu.paginaLivros();
 		}
@@ -44,20 +46,24 @@ public class LoginBean {
 	}
 	
 	public String efetuaLogout() {
+		
 		this.usuarioLogado.deslogar();
 		return this.menu.paginaLogin();
 	}
 
 	
 	private void limparForm() {
+		
 		this.usuario = new Usuario();
 	}
 
 	private void criaMensagem(String mensagem) {
+		
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, mensagem, ""));
 	}
 
 	private boolean possuiMesmaSenha(Usuario usuarioEncontrado) {
+		
 		return usuarioEncontrado.getSenha().equals(usuario.getSenha());
 	}
 }

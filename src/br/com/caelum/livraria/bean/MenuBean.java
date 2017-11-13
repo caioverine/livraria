@@ -13,24 +13,29 @@ public class MenuBean implements Serializable{
 	private Integer index=0;
 	
 	public Integer getIndex() {
+		
 		return index;
 	}
 	
 	public void setIndex(Integer index) {
+		
 		this.index = index;
 	}
 	
 	public String paginaLivros() {
+		
 		this.index = 0;
 		return "livros?faces-redirect=true";
 	}
 	
 	public String paginaAutores() {
+		
 		this.index = 1;
 		return "autores?faces-redirect=true";
 	}
 
 	public String paginaLogin() {
+		
 		this.index = 0;
 		return "login?faces-redirect=true";
 	}

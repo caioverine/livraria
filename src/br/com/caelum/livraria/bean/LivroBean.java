@@ -31,22 +31,27 @@ public class LivroBean {
 	}
 
 	public List<Autor> getAutores() {
+		
 		return autorDao.todosAutores();
 	}
 	
 	public Livro getLivro() {
+		
 		return livro;
 	}
 	
 	public void setAutorId(Integer autorId) {
+		
 		this.autorId = autorId;
 	}
 	
 	public Integer getAutorId() {
+		
 		return autorId;
 	}
 	
 	public List<Livro> getLivros() {
+		
 		return this.livroDao.todosLivros();
 	}
 }

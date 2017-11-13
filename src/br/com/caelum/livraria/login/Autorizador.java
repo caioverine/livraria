@@ -17,6 +17,7 @@ public class Autorizador implements PhaseListener{
 		FacesContext context = event.getFacesContext();
 		
 		if ("/login.xhtml".equals(context.getViewRoot().getViewId())) {
+			
 			return;
 		}
 		
@@ -38,10 +39,12 @@ public class Autorizador implements PhaseListener{
 
 	@Override
 	public void beforePhase(PhaseEvent event) {
+		
 	}
 
 	@Override
 	public PhaseId getPhaseId() {
+		
 		return PhaseId.RESTORE_VIEW;
 	}
 	

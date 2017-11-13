@@ -16,18 +16,22 @@ public class UsuarioLogadoBean implements Serializable {
 	private Usuario usuario;
 
 	public void logar(Usuario usuario) {
+		
 		this.usuario = usuario;
 	}
 
 	public void deslogar() {
+		
 		this.usuario = null;
 	}
 	
 	public Usuario getUsuario() {
+		
 		return usuario;
 	}
 
 	public boolean isLogado() {
+		
 		return usuario != null;
 	}
 }

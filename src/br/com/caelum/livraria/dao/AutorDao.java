@@ -17,10 +17,12 @@ public class AutorDao {
 	
 	@PostConstruct
 	void aposCriacao(){
+		
 		System.out.println("[INFO] AutorDao foi criado.");
 	}
 
 	public void salva(Autor autor) {
+		
 		System.out.println("[INFO] Salvando o Autor " + autor.getNome());
 
 //	    try {
@@ -34,10 +36,12 @@ public class AutorDao {
 	}
 	
 	public List<Autor> todosAutores() {
+		
 		return manager.createQuery("select a from Autor a", Autor.class).getResultList();
 	}
 
 	public Autor buscaPelaId(Integer autorId) {
+		
 		Autor autor = this.manager.find(Autor.class, autorId);
 		return autor;
 	}

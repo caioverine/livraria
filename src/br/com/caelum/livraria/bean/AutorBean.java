@@ -14,15 +14,18 @@ public class AutorBean {
 	private AutorService service;
 	
 	public Autor getAutor() {
+		
 		return autor;
 	}
 	
 	public void cadastra() {
+		
 		this.service.adiciona(autor);
 		this.autor = new Autor();
 	}
 	
 	public List<Autor> getAutores() {
+		
 		return this.service.todosAutores();
 	}
 }

@@ -22,36 +22,44 @@ public class Banco {
 	private static int chave = 1;
 	
 	static {
+		
 		inicializaBanco();
 	}
 	
 	@PostConstruct
     void aposCriacao() {
+		
         System.out.println("[INFO] O Banco acabou de ser criado.");
     }
 
 	public void save(Livro livro) {
+		
 		livro.setId(chave++);
 		livros.add(livro);
 	}
 	
 	public List<Livro> listaLivros() {
+		
 		return livros;
 	}
 	
 	public void save(Autor autor) {
+		
 		autor.setId(chave++);
 		autores.add(autor);
 	}
 	
 	public List<Autor> listaAutores() {
+		
 		return autores;
 	}
 
 	public Autor buscaPelaId(Integer autorId) {
 
 		for (Autor autor : autores) {
+			
 			if(autor.getId().equals(autorId)) {
+				
 				return autor;
 			}
 		}
@@ -59,8 +67,11 @@ public class Banco {
 	}
 	
 	public Usuario buscaPeloNome(String nome) {
+		
 		for (Usuario usuario : usuarios) {
+			
 			if(usuario.getLogin().equals(nome)) {
+				
 				return usuario;
 			}
 		}
@@ -69,6 +80,7 @@ public class Banco {
 	}
 	
 	private static void inicializaBanco() {
+		
 		Autor silveira = new Autor(chave++, "Paulo Silveira");
 		Autor cordeiro = new Autor(chave++, "Gilliard Cordeiro");
 		Autor coelho = new Autor(chave++, "Hébert Coelho ");
